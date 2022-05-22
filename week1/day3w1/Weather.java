@@ -8,12 +8,12 @@ public class Weather {
 		boolean isRaining = false;
 		double temperature = 40.89;
 		
-		if(isSnowing == true || isRaining == true) {
-			System.out.println("Let’s stay home.");
+		if(isSnowing == true || isRaining == true || temperature<(double)50) {
+			System.out.println("Letâ€™s stay home.");
 			
 		}
-		else if(temperature<=(double)50) {
-			System.out.println("Let’s go out!");
+		else {
+			System.out.println("Letâ€™s go out!");
 		}
 	}
 
