@@ -1,3 +1,0 @@
-INDEX VERSION 1.131+D:\masai data\unit4\java\week1\w1d5\assignments\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-639904138.index
