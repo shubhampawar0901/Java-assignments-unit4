@@ -1,0 +1,67 @@
+package com.classCastException;
+
+//ClassCast Exception occurs when we try to try to cast an 
+//object of the parent class to the child class object.
+//Also when we try to convert the objects of 
+//two individual classes that don't have any relationship between them
+
+public class Main{
+  public static void main(String[] args){
+      A a1 = new A();
+      A a2 = new B();
+      A a3 = new C();
+      
+      // here we can pass A, B, C object to the variable with A reference since A is the same
+//      class while B & C are the subclasses of the A
+      
+      
+//      B b1 = new C();
+//Even though both B & C are child classes of A, 
+//we cannot pass C object to the 
+//variable with B reference since B is neither the same class nor the subclass of C.
+//Hence on running the code it will throw a ClassCastException.
+  }
+}
+
+class A{
+	
+}
+class B extends A{
+	
+}
+class C extends A{
+	
+}
+
+
+class Animal {  
+	String color;  
+	Animal(String color){  
+		this.color = color;  
+	}  
+	void eat(String name) {  
+		System.out.println(name + " is eating .....");  
+	}  
+	void show(String name) {  
+		System.out.println(name + " is of " + color + " Color");  
+	}  
+}  
+
+class Dog extends Animal{  
+	Dog(String color) {  
+		super(color);  
+	// TODO Auto-generated constructor stub  
+	}  
+	void eat(String name) {  
+		System.out.println(name + " is eating ....");  
+	}  
+}  
+
+class Main2 {  
+	public static void main(String[] args) {  	  
+		Animal animal1 = new Animal("White");  
+		Dog d = (Dog)animal1;  
+		//this will throw classcastexception since we can't cast 
+		//object of parent class to the child class object
+	}  
+}  
