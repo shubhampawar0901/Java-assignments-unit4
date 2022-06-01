@@ -1,0 +1,95 @@
+Abstract class and interface both are used for achieving abstraction in java.
+
+Abstract class :
+	1.It has abstract keyword. 
+	2.It may or may not have abstract methods.
+	3.When we want nobody to create object of a class, we prefer making that class
+	as abstract class. We can not instantiate object for abstract class.
+	4.Abstract class should have child otherwise it is meaningless.
+	5.Empty abstract class is also valid .
+	6.Child class of abstract class should override all abstract methods of abstract
+	class otherwise we need to make that child class as abstract class.
+	7.It can have final, static, non final, non static variables.
+	8.We can not create object of abstracted class with reference variable of 
+	  same abstracted class.
+
+eg.
+
+public abstract class Student {
+
+	final String name ="Shubham";
+	String address ;
+	
+	public Student( String address) {
+		super();
+		this.address = address;
+	}
+	
+	abstract double getPercentage( );
+	
+	void funX(){
+	
+	}
+}
+
+public class ScienceStudent extends Student {
+	
+	int phisicsMarks;
+	int chemistryMarks;
+	int mathsMarks;
+
+	public ScienceStudent(String name, String address) {
+		super(name, address);
+		// TODO Auto-generated constructor stub
+		this.name = name;
+		this.address= address;
+	}
+	
+	@Override
+	double getPercentage() {
+		// TODO Auto-generated method stub
+		double percentage = (double) (phisicsMarks+chemistryMarks+mathsMarks)/3;
+		return percentage;
+	}
+
+}
+
+
+Interface :
+1.Interface provides 100% abstraction.
+2.Interface is like contract, whichever class implements it,
+3.it should implement all the overridden methods.
+4.An Interface has only static and final variables.
+5.Members of a Java interface are public by default.
+6.by default methods in interface are "public abstract".
+7. Child of interface should be abstract class or all methods from interface
+ should be overriden
+8. We can have default and static methods in interface.
+9. Interface can be extended by another interface but can not be implemented.
+
+eg.
+public interface Hotel {
+	void chickenBiryani();
+	void masalaDosa();
+}
+
+public class TajHotel implements Hotel {
+
+	@Override
+	public void chickenBiryani() {
+		// TODO Auto-generated method stub
+		System.out.println("TajHotel chicken biryani");
+	}
+
+	@Override
+	public void masalaDosa() {
+		// TODO Auto-generated method stub
+		System.out.println("TajHotel masaladosa");
+	}
+	
+	public void welcomeDrink(){
+		System.out.println("Welcome Drink from the TajHotel");
+	}
+
+}
+
